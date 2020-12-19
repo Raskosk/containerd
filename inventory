@@ -1,0 +1,3 @@
+[Group]
+test ansible_host=192.168.9.88 ansible_user=root
+
