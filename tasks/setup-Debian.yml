@@ -68,11 +68,14 @@
     state: present
     update_cache: true
 
-- name: "Install ontainerd"
+- name: "Install containerd"
   apt:
     name:
     - containerd
     state: present
+
+- name: "Load containerd default Config"
+  shell: "containerd config default > /etc/containerd/config.toml"
 
 - name: "Create /etc/module-load.d if not existent"
   file:
