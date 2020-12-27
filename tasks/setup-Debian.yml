@@ -13,11 +13,13 @@
     mode: u=rw,g=r,o=r
   become: true
 
-- modprobe: 
+- name: "modprobe overlay"
+  modprobe: 
     name: overlay
     state: present
 
-- modprobe:
+- name: "modproble br_netfilter"
+  modprobe:
     name: br_netfilter
     state: present
 
