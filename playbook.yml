@@ -9,9 +9,9 @@
   - docker_apt_repository: "deb [arch={{ docker_apt_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
   - docker_apt_arch: "amd64"
   - docker_apt_release_channel: "stable"
-  - http_proxy: "http://v-adm001.workbenching.de:3128"
-  - https_proxy: "http://v-adm001.workbenching.de:3128"
-  - no_proxy: "127.0.0.1, *.workbenching.de"
+  - http_proxy: "http://proxy:3128"
+  - https_proxy: "http://proxy:3128"
+  - no_proxy: ".example.local,127.0.0.1,127.0.1.1"
   tasks: 
   - include_tasks:
       file: "tasks/main.yml"
