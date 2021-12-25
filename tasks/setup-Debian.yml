@@ -7,7 +7,7 @@
 - name: "Template file to /etc/module-load.d/containerd.conf"
   template:
     src: "module.conf"
-    dest: "/etc/module-load.d/containerd.conf"
+    dest: "/etc/modules-load.d/containerd.conf"
     owner:
     group:
     mode: u=rw,g=r,o=r
@@ -79,7 +79,7 @@
 - name: "Load containerd default Config"
   shell: "containerd config default > /etc/containerd/config.toml"
 
-- name: "Create /etc/module-load.d if not existent"
+- name: "Create /etc/systemd/system/containerd.service.d if not existent"
   file:
     path: /etc/systemd/system/containerd.service.d
     state: directory
@@ -87,7 +87,7 @@
 - name: "Create Service Config for Proxy"
   template:
     src: "http-proxy.conf"
-    dest: "/etc/systemd/system/containerd.service.d/http-proxy.conf"
+    dest: "/etc/systemd/system/containerd.service.d/proxy.conf"
     owner: 
     group:
     mode: u=rw,g=r,o=r
