@@ -20,6 +20,7 @@ Role Variables
   - http_proxy: "<proxy>"
   - https_proxy: "<proxy>"
   - no_proxy: "<no proxy, more no proxy>"
+  - cgroupdriver: "SystemdCgroup = true" #leave empty or comment to use cgroupfs
 
 Dependencies
 ------------
