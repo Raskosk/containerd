@@ -76,8 +76,15 @@
     - containerd
     state: present
 
+- name: "Create containerd config from template"
+  template: 
+    src: "containerd-config.toml"
+    dest: "/etc/containerd/config.toml"
+  when: cgroupdriver is defined and cgroupdriver != ""
+  
 - name: "Load containerd default Config"
   shell: "containerd config default > /etc/containerd/config.toml"
+  when: cgroupdriver is not defined or cgroupdriver = ""
 
 - name: "Create /etc/systemd/system/containerd.service.d if not existent"
   file:

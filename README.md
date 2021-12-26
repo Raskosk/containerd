@@ -42,6 +42,7 @@ Including an example of how to use your role (for instance, with variables passe
         - http_proxy: "<proxy>"
         - https_proxy: "<proxy>"
         - no_proxy: "<no proxy, more no proxy>"
+        - cgroupdriver: "SystemdCgroup = true" #forcing containerd to use Systemd as cgroupDriver instead of cgroupfs as defined by containerd-fallback
       roles:
          - raskosk.containerd
 
